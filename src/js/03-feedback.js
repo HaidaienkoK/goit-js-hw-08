@@ -17,9 +17,9 @@ onFormReload();
 
 function saveFeedback(event) {
   if (event.target === emailEl) {
-    feedbackForm.email = event.target.value;
+    feedbackForm.email = event.target.value.trim();
   } else {
-    feedbackForm.message = event.target.value;
+    feedbackForm.message = event.target.value.trim();
   }
   let messageStorage = JSON.stringify(feedbackForm);
   localStorage.setItem(STORAGE_KEY, messageStorage);
@@ -35,6 +35,10 @@ function onFormReload() {
 }
 
 function onFormSub(event) {
+  if (feedbackForm.email ==="" || feedbackForm.message==="") {
+    alert("Заполните все поля");
+return
+  }
   event.preventDefault();
   console.log(feedbackForm);
   event.target.reset();

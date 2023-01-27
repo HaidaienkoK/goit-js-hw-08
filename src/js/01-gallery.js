@@ -24,12 +24,11 @@ function createImageCards(galleryItems) {
     .join('');
 }
 
-(function () {
-  var $gallery = new SimpleLightbox('.gallery a', {
+gallery = new SimpleLightbox('.gallery a', {
     captionType: 'attr',
     captionsData: 'alt',
     captionPosition: 'bottom',
     captionDelay: 250,
   });
-})();
+
 
