@@ -24,7 +24,7 @@ function createImageCards(galleryItems) {
     .join('');
 }
 
-gallery = new SimpleLightbox('.gallery a', {
+const gallery = new SimpleLightbox('.gallery a', {
     captionType: 'attr',
     captionsData: 'alt',
     captionPosition: 'bottom',
